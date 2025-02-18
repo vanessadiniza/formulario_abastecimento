@@ -15,6 +15,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         label { font-weight: bold; display: block; margin-top: 10px; }
+        .required::after { content: " *"; color: red; }
         input, select, textarea {
             width: 100%;
             padding: 8px;
@@ -56,7 +57,7 @@
         <label>Data e Hora</label>
         <input type="datetime-local" required>
 
-        <label>Usuário que solicitou</label>
+        <label class="required">Usuário que solicitou</label>
         <input type="text" required>
 
         <label>Placa do Veículo</label>
@@ -70,20 +71,20 @@
         <label>Modelo do Veículo</label>
         <input type="text" disabled>
 
-        <label>Hodômetro Atual (KM)</label>
+        <label class="required">Hodômetro Atual (KM)</label>
         <input type="number" min="0" required>
 
-        <label>Motorista</label>
+        <label class="required">Motorista</label>
         <select required>
             <option value="">Selecione</option>
         </select>
 
-        <label>Posto de Abastecimento</label>
+        <label class="required">Posto de Abastecimento</label>
         <select required>
             <option value="">Selecione</option>
         </select>
 
-        <label>Tipo de Combustível</label>
+        <label class="required">Tipo de Combustível</label>
         <select required>
             <option value="">Selecione</option>
             <option>Gasolina</option>
@@ -102,10 +103,10 @@
         <label>Valor Total do Abastecimento</label>
         <input type="number" min="0.01" step="0.01" required>
 
-        <label>Reembolsável</label>
+        <label class="required">Reembolsável</label>
         <div class="radio-group">
-            <input type="radio" name="reembolsavel" value="Sim"> Sim
-            <input type="radio" name="reembolsavel" value="Não" checked> Não
+            <input type="radio" name="reembolsavel" value="Sim" required> Sim
+            <input type="radio" name="reembolsavel" value="Não" checked required> Não
         </div>
 
         <label>Forma de Pagamento</label>
@@ -116,21 +117,22 @@
             <option>Boleto</option>
         </select>
 
-        <label>Centro de Custo</label>
+        <label class="required">Centro de Custo</label>
         <select required>
             <option value="">Selecione</option>
         </select>
 
-        <label>Aprovado Por</label>
+        <label class="required">Aprovado Por</label>
         <input type="text" required>
 
         <label>Observações</label>
         <textarea></textarea>
 
         <div class="button-group">
-            <button type="submit" class="btn-primary">✅ Enviar</button>
+            <button type="submit" class="btn-primary">✅ Salvar</button>
             <button type="reset" class="btn-secondary">❌ Cancelar</button>
         </div>
     </form>
 </body>
 </html>
+
