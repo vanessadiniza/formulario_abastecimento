@@ -103,8 +103,15 @@
         <label>Quantidade Abastecida (Litros)</label>
         <input type="number" min="0.1" step="0.01" required>
 
-       <label for="precoLitro">Preço por Litro</label>
-    <input type="text" id="precoLitro" name="precoLitro" required oninput="formatarMoeda(this)">
+      <style>
+    .obrigatorio {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
+<label for="precoLitro">Preço por Litro <span class="obrigatorio">*</span></label>
+<input type="text" id="precoLitro" name="precoLitro" required oninput="formatarMoeda(this)">
 
 <script>
 function formatarMoeda(input) {
